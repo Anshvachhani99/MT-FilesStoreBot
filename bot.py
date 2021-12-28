@@ -25,8 +25,8 @@ class Bot(Client):
             "Bot",
             api_hash=API_HASH,
             api_id=APP_ID,
-            mo_tech_yt={
-                "root": "mo_tech_yt"
+            plugins={
+                "root": "plugins
             },
             workers=TG_BOT_WORKERS,
             bot_token=TG_BOT_TOKEN
