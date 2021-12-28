@@ -106,7 +106,6 @@ async def main(bot: Client, message: Message):
                                      disable_web_page_preview=True)
             return
         if Config.OTHER_USERS_CAN_SAVE_FILE is False:
-            )
         except FloodWait as sl:
             await asyncio.sleep(sl.x)
             await bot.send_message(
