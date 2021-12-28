@@ -105,8 +105,7 @@ async def main(bot: Client, message: Message):
             await message.reply_text("Sorry, You are banned!\n\nContact [Support Group](https://t.me/Mo_Tech_Group)",
                                      disable_web_page_preview=True)
             return
-        if Config.OTHER_USERS_CAN_SAVE_FILE is False:
-        except FloodWait as sl:
+        if Config.OTHER_USERS_CAN_SAVE_FILE is False:        
             await asyncio.sleep(sl.x)
             await bot.send_message(
                 chat_id=Config.LOG_CHANNEL,
