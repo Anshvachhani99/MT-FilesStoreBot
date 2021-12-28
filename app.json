@@ -25,7 +25,7 @@
       "description": "your api hash, take it from my.telegram.org",
       "value": ""
     },
-    "DATABASE_URL"{
+    "DATABASE_URL":{
       "value":""
     }, 
     "CHANNEL_ID":{
