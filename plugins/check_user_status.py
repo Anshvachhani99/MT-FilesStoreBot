@@ -1,7 +1,7 @@
 # (c) @MRK_YT
 
 import datetime
-from config import LOG_CHANNEL, DB_URL
+from config import DB_URL, LOG_CHANNEL
 from plugins.database import Database
 
 db = Database(DB_URL)
