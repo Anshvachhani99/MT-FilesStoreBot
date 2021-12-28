@@ -2,7 +2,9 @@
 
 import datetime
 from configs import LOG_CHANNEL
+from mo_tech_yt.database import Database
 
+db = Database(Config.DATABASE_URL)
 
 async def handle_user_status(bot, cmd):
     chat_id = cmd.from_user.id
