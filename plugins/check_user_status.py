@@ -2,7 +2,7 @@
 
 import datetime
 from config import LOG_CHANNEL
-from mo_tech_yt.database import Database
+from plugins.database import Database
 
 db = Database(Config.DATABASE_URL)
 
