@@ -1,10 +1,10 @@
 # (c) @MRK_YT
 
 import datetime
-from config import LOG_CHANNEL
+from config import LOG_CHANNEL, DB_URL
 from plugins.database import Database
 
-db = Database(from config import DB_URL)
+db = Database(DB_URL)
 
 async def handle_user_status(bot, cmd):
     chat_id = cmd.from_user.id
