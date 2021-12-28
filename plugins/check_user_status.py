@@ -1,7 +1,7 @@
 # (c) @MRK_YT
 
 import datetime
-from configs import LOG_CHANNEL
+from config import LOG_CHANNEL
 from mo_tech_yt.database import Database
 
 db = Database(Config.DATABASE_URL)
