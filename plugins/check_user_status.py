@@ -4,7 +4,7 @@ import datetime
 from config import LOG_CHANNEL
 from plugins.database import Database
 
-db = Database(Config.DB_URL)
+db = Database(Config import DB_URL)
 
 async def handle_user_status(bot, cmd):
     chat_id = cmd.from_user.id
