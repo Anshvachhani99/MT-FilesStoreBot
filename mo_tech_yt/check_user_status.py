@@ -1,20 +1,20 @@
 # (c) @MRK_YT
 
 import datetime
-from configs import Config
-from mo_tech_yt.database import Database
-
-db = Database(Config.DATABASE_URL, Config.BOT_USERNAME)
+from configs import LOG_CHANNEL
 
 
 async def handle_user_status(bot, cmd):
     chat_id = cmd.from_user.id
     if not await db.is_user_exist(chat_id):
-        await db.add_user(chat_id)
-        await bot.send_message(
-            Config.LOG_CHANNEL,
-            f"#NEW_USER: \n\nNew User [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id}) started @{Config.BOT_USERNAME} !!"
-        )
+        total=await client.get_chat_members_count(message.chat.id)
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))     
+        await db.add_chat(message.chat.id, message.chat.title)
+        return 
+    if not await db.is_user_exist(message.from_user.id):
+        await db.add_user(message.from_user.id, message.from_user.first_name)
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
+
 
     ban_status = await db.get_ban_status(chat_id)
     if ban_status["is_banned"]:
