@@ -106,24 +106,6 @@ async def main(bot: Client, message: Message):
                                      disable_web_page_preview=True)
             return
         if Config.OTHER_USERS_CAN_SAVE_FILE is False:
-            return
-        editable = await message.reply_text("Please wait ...")
-        try:
-            forwarded_msg = await message.forward(Config.DB_CHANNEL)
-            file_er_id = forwarded_msg.message_id
-            await forwarded_msg.reply_text(
-                f"#PRIVATE_FILE:\n\n[{message.from_user.first_name}](tg://user?id={message.from_user.id}) Got File Link!",
-                parse_mode="Markdown", disable_web_page_preview=True)
-            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=MRK_YT_{file_er_id}"
-            await editable.edit(
-                f"**Your File Stored in my Database!**\n\nHere is the Permanent Link of your file: {share_link} \n\nJust Click the link to get your file!",
-                parse_mode="Markdown",
-                reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("♻️Open Link♻️", url=share_link)],
-                     [InlineKeyboardButton("🔊Channel", url="https://t.me/Mo_Tech_Yt"),
-                      InlineKeyboardButton("👨‍💼Group", url="https://t.me/Mo_Tech_Group")]]
-                ),
-                disable_web_page_preview=True
             )
         except FloodWait as sl:
             await asyncio.sleep(sl.x)
