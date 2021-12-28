@@ -24,7 +24,7 @@ DB_URI = os.environ.get("DATABASE_URL", "")
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 
 #Log Channel
-LOG_CHANNEL = int(os.environ.get("MT_LOG_CHANNEL"))
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
